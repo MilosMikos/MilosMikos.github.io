@@ -13,12 +13,13 @@
     <link rel="stylesheet" href="fonts.css" />
 
     <script src="scripts/main.js" defer></script>
-    <script src="scripts/translations.js" defer></script>
-    <script src="scripts/language-selector.js" defer></script>
+    <script src="locales/i18n.js" defer></script>
+    <script src="scripts/comicsManager.js" defer></script>
+    <script src="scripts/languageSwitcher.js" defer></script>
   </head>
 
   <body>
-    <p class="warning" id="WIPText">
+    <p class="warning" data-i18n="WIPText">
       ⚠️ THIS WEBSITE IS UNDER CONSTRUCTION! ⚠️ CSS IS HARD PLEASE HELP ME !
     </p>
 
@@ -141,19 +142,19 @@
             </div>
 
             <div id="spNavMenu">
-              <a class="aHoverVertShift" id="aboutButtonText" href="about.html"
+              <a class="aHoverVertShift" data-i18n="aboutButtonText" href="about.html"
                 >About</a
               >
-              <a class="aHoverVertShift" id="teamButtonText" href="team.html"
+              <a class="aHoverVertShift" data-i18n="teamButtonText" href="team.html"
                 >Our Team</a
               >
               <a
                 class="aHoverVertShift"
-                id="otherTranslationsButtonText"
+                data-i18n="otherTranslationsButtonText"
                 href="moreTranslations.html"
                 >Other translation projects</a
               >
-              <a class="aHoverVertShift" id="helpUsButtonText" href="help.html"
+              <a class="aHoverVertShift" data-i18n="helpUsButtonText" href="help.html"
                 >Help us</a
               >
               <a class="aHoverVertShift" id="" style="padding: 12px 24px; background: #b35215; border: 2px solid #b35215; border-radius: 8px; font-family: Host Grotesk; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.2s ease; color:rgb(237, 237, 226); font-size:clamp(5pt, 15pt, 18pt); display:flex; flex-direction:column; justify-content:center;" href="/comics/downloader.html"
@@ -164,7 +165,7 @@
           <div id="centerColContent">
             <div id="blurb">
               <img src="images/blurbImages/menu-yeti.png" />
-              <p id="blurbText">
+              <p data-i18n="blurbText">
                 Valve never translated the comics, the community efforts to do
                 so were numerous, but unorganised and sometimes lazy almost none
                 led to any full translation. This project is a reunification of
@@ -178,7 +179,7 @@
 
             <div id="comics_container">
               <div class="sectionSeparatorContainer">
-                <div class="sectionSeparatorText" id="tfComics">TF COMICS</div>
+                <div class="sectionSeparatorText" data-i18n="tfComics">TF COMICS</div>
                 <div class="sectionSeparatorLine"></div>
               </div>
 
@@ -191,18 +192,18 @@
                       src="/comics/covers/main/tf00/tf00_cover_textless.png"
                     />
                     <div class="overlay" style="display: none">
-                      <span id="notTranslatedYet">BD pas encore traduite</span>
+                      <span data-i18n="notTranslatedYet">BD pas encore traduite</span>
                     </div>
                   </a>
                 </div>
 
                 <div class="comic_caption">
                   <span class="caption_main">
-                    <a href="comics/comicreader.html" id="tf00Title"
+                    <a href="comics/comicreader.html" data-i18n="tf00Title"
                       >Catch-Up Comic</a
                     >
                   </span>
-                  <span class="caption_date" id="tf00Date">May 2, 2014</span>
+                  <span class="caption_date" data-i18n="tf00Date">May 2, 2014</span>
                 </div>
               </div>
 
@@ -215,7 +216,7 @@
                       src="/comics/covers/main/tf01/tf01_cover_textless.png"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
+                      <span class="notTranslatedYet" data-i18n="notTranslatedYet"
                         >Not added yet</span
                       >
                     </div>
@@ -224,11 +225,11 @@
 
                 <div class="comic_caption">
                   <span class="caption_main">
-                    <a href="comics/comicreader.html#EN-tf01-1" id="tf01Title"
+                    <a href="comics/comicreader.html#EN-tf01-1" data-i18n="tf01Title"
                       >Ring of Fired</a
                     >
                   </span>
-                  <span class="caption_date" id="tf01Date"
+                  <span class="caption_date" data-i18n="tf01Date"
                     >August 28, 2013</span
                   >
                 </div>
@@ -243,7 +244,7 @@
                       src="/comics/covers/main/tf02/tf02_cover_textless.png"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
+                      <span class="notTranslatedYet" data-i18n="notTranslatedYet"
                         >Not added yet</span
                       >
                     </div>
@@ -251,11 +252,11 @@
                 </div>
                 <div class="comic_caption">
                   <span class="caption_main">
-                    <a href="comics/comicreader.html#EN-tf02-1" id="tf02Title"
+                    <a href="comics/comicreader.html#EN-tf02-1" data-i18n="tf02Title"
                       >Unhappy Returns</a
                     >
                   </span>
-                  <span class="caption_date" id="tf02Date"
+                  <span class="caption_date" data-i18n="tf02Date"
                     >December 4, 2013</span
                   >
                 </div>
@@ -270,7 +271,7 @@
                       src="/comics/covers/main/tf03_cover.png"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
+                      <span class="notTranslatedYet" data-i18n="notTranslatedYet"
                         >Not added yet</span
                       >
                     </div>
@@ -279,11 +280,11 @@
 
                 <div class="comic_caption">
                   <span class="caption_main">
-                    <a href="comics/comicreader.html#EN-tf03-1" id="tf03Title"
+                    <a href="comics/comicreader.html#EN-tf03-1" data-i18n="tf03Title"
                       >A Cold Day in Hell</a
                     >
                   </span>
-                  <span class="caption_date" id="tf03Date">April 2, 2014</span>
+                  <span class="caption_date" data-i18n="tf03Date">April 2, 2014</span>
                 </div>
               </div>
 
@@ -296,7 +297,7 @@
                       src="/comics/covers/main/tf04_cover.png"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
+                      <span class="notTranslatedYet" data-i18n="notTranslatedYet"
                         >Not added yet</span
                       >
                     </div>
@@ -305,11 +306,11 @@
 
                 <div class="comic_caption">
                   <span class="caption_main">
-                    <a href="comics/comicreader.html#EN-tf04-1" id="tf04Title"
+                    <a href="comics/comicreader.html#EN-tf04-1" data-i18n="tf04Title"
                       >Blood in the Water</a
                     >
                   </span>
-                  <span class="caption_date" id="tf04Date"
+                  <span class="caption_date" data-i18n="tf04Date"
                     >October 2, 2014</span
                   >
                 </div>
@@ -324,7 +325,7 @@
                       src="/comics/covers/main/tf05_cover.png"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
+                      <span class="notTranslatedYet" data-i18n="notTranslatedYet"
                         >Not added yet</span
                       >
                     </div>
@@ -335,11 +336,11 @@
                   <span class="caption_main">
                     <a
                       href="https://www.teamfortress.com/tf05_old_wounds/"
-                      id="tf05Title"
+                      data-i18n="tf05Title"
                       >Old Wounds</a
                     >
                   </span>
-                  <span class="caption_date" id="tf05Date"
+                  <span class="caption_date" data-i18n="tf05Date"
                     >August 31, 2015</span
                   >
                 </div>
@@ -356,7 +357,7 @@
                       src="/comics/covers/main/tf06_cover.png"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
+                      <span class="notTranslatedYet" data-i18n="notTranslatedYet"
                         >Not added yet</span
                       >
                     </div>
@@ -367,11 +368,11 @@
                   <span class="caption_main">
                     <a
                       href="https://www.teamfortress.com/tf06_thenakedandthedead/"
-                      id="tf06Title"
+                      data-i18n="tf06Title"
                       >The Naked and the Dead</a
                     >
                   </span>
-                  <span class="caption_date" id="tf06Date"
+                  <span class="caption_date" data-i18n="tf06Date"
                     >January 10, 2017</span
                   >
                 </div>
@@ -387,7 +388,7 @@
                       alt="TF07 Cover"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
+                      <span class="notTranslatedYet" data-i18n="notTranslatedYet"
                         >Not added yet</span
                       >
                     </div>
@@ -396,11 +397,11 @@
 
                 <div class="comic_caption">
                   <span class="caption_main">
-                    <a href="tf07_thedayshavewornaway/" id="tf07Title"
+                    <a href="tf07_thedayshavewornaway/" data-i18n="tf07Title"
                       >The Days Have Worn Away</a
                     >
                   </span>
-                  <span class="caption_date" id="tf07Date"
+                  <span class="caption_date" data-i18n="tf07Date"
                     >December 20, 2024</span
                   >
                 </div>
@@ -419,7 +420,7 @@
               <!--====================================== UPDATE COMICS ============================================== -->
 
               <div class="sectionSeparatorContainer">
-                <div class="sectionSeparatorText" id="updateComics">
+                <div class="sectionSeparatorText" data-i18n="updateComics">
                   UPDATE COMICS
                 </div>
                 <div class="sectionSeparatorLine"></div>
@@ -435,8 +436,8 @@
                       alt="TFu18 Cover"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
-                        >Not added yet</span
+                      <span class="notTranslatedYet" data-i18n="notPlannedYet"
+                        >Not planned yet</span
                       >
                     </div>
                   </a>
@@ -445,13 +446,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu18Title"
+                      data-i18n="tfu18Title"
                       href="https://www.teamfortress.com/theshowdown/"
                       >The Showdown</a
                     ></span
                   >
 
-                  <span id="tfu18Date" class="caption_date">July 7, 2016</span>
+                  <span data-i18n="tfu18Date" class="caption_date">July 7, 2016</span>
                 </div>
               </div>
 
@@ -465,8 +466,8 @@
                       alt="TFu17 Cover"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
-                        >Not added yet</span
+                      <span class="notTranslatedYet" data-i18n="notPlannedYet"
+                        >Not planned yet</span
                       >
                     </div>
                   </a>
@@ -475,13 +476,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu17Title"
+                      data-i18n="tfu17Title"
                       href="https://www.teamfortress.com/gargoyles_and_gravel/"
                       >Gargoyles & Gravel</a
                     ></span
                   >
 
-                  <span id="tfu17Date" class="caption_date"
+                  <span data-i18n="tfu17Date" class="caption_date"
                     >October 28, 2015</span
                   >
                 </div>
@@ -498,8 +499,8 @@
                       alt="TFu16 Cover"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
-                        >Not added yet</span
+                      <span class="notTranslatedYet" data-i18n="notPlannedYet"
+                        >Not planned yet</span
                       >
                     </div>
                   </a>
@@ -508,13 +509,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu16Title"
+                      data-i18n="tfu16Title"
                       href="https://www.teamfortress.com/thecontract/"
                       >The Contract</a
                     ></span
                   >
 
-                  <span id="tfu16Date" class="caption_date">July 2, 2015</span>
+                  <span data-i18n="tfu16Date" class="caption_date">July 2, 2015</span>
                 </div>
               </div>
 
@@ -528,8 +529,8 @@
                       alt="TFu15 Cover"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
-                        >Not added yet</span
+                      <span class="notTranslatedYet" data-i18n="notPlannedYet"
+                        >Not planned yet</span
                       >
                     </div>
                   </a>
@@ -538,13 +539,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu15Title"
+                      data-i18n="tfu15Title"
                       href="https://www.teamfortress.com/bloodmoney/"
                       >Blood Money</a
                     ></span
                   >
 
-                  <span id="tfu15Date" class="caption_date"
+                  <span data-i18n="tfu15Date" class="caption_date"
                     >October 29, 2014</span
                   >
                 </div>
@@ -560,8 +561,8 @@
                       alt="TFu14 Cover"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
-                        >Not added yet</span
+                      <span class="notTranslatedYet" data-i18n="notPlannedYet"
+                        >Not planned yet</span
                       >
                     </div>
                   </a>
@@ -570,13 +571,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu14Title"
+                      data-i18n="tfu14Title"
                       href="https://www.teamfortress.com/gravematters/"
                       >Grave Matters</a
                     ></span
                   >
 
-                  <span id="tfu14Date" class="caption_date"
+                  <span data-i18n="tfu14Date" class="caption_date"
                     >October 28, 2013</span
                   >
                 </div>
@@ -592,8 +593,8 @@
                       alt="TFu13 Cover"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
-                        >Not added yet</span
+                      <span class="notTranslatedYet" data-i18n="notPlannedYet"
+                        >Not planned yet</span
                       >
                     </div>
                   </a>
@@ -602,13 +603,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu13Title"
+                      data-i18n="tfu13Title"
                       href="https://www.teamfortress.com/shadowboxers/"
                       >The Shadow Boxers</a
                     ></span
                   >
 
-                  <span id="tfu13Date" class="caption_date"
+                  <span data-i18n="tfu13Date" class="caption_date"
                     >December 19, 2012</span
                   >
                 </div>
@@ -624,8 +625,8 @@
                       alt="TFu12 Cover"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
-                        >Not added yet</span
+                      <span class="notTranslatedYet" data-i18n="notPlannedYet"
+                        >Not planned yet</span
                       >
                     </div>
                   </a>
@@ -634,13 +635,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu12Title"
+                      data-i18n="tfu12Title"
                       href="https://www.teamfortress.com/doommates/"
                       >Doom-Mates</a
                     ></span
                   >
 
-                  <span id="tfu12Date" class="caption_date"
+                  <span data-i18n="tfu12Date" class="caption_date"
                     >October 24, 2012</span
                   >
                 </div>
@@ -656,8 +657,8 @@
                       alt="TFu11 Cover"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
-                        >Not added yet</span
+                      <span class="notTranslatedYet" data-i18n="notPlannedYet"
+                        >Not planned yet</span
                       >
                     </div>
                   </a>
@@ -666,13 +667,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu11Title"
+                      data-i18n="tfu11Title"
                       href="https://www.teamfortress.com/fateworsethanchess/"
                       >A Fate Worse Than Chess</a
                     ></span
                   >
 
-                  <span id="tfu11Date" class="caption_date"
+                  <span data-i18n="tfu11Date" class="caption_date"
                     >August 13, 2012</span
                   >
                 </div>
@@ -688,8 +689,8 @@
                       alt="TFu10 Cover"
                     />
                     <div class="overlay" style="display: none">
-                      <span class="notTranslatedYet" data-key="notTranslatedYet"
-                        >Not added yet</span
+                      <span class="notTranslatedYet" data-i18n="notPlannedYet"
+                        >Not planned yet</span
                       >
                     </div>
                   </a>
@@ -698,13 +699,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu10Title"
+                      data-i18n="tfu10Title"
                       href="https://www.teamfortress.com/bloodbrothers/"
                       >Blood Brothers</a
                     ></span
                   >
 
-                  <span id="tfu10Date" class="caption_date"
+                  <span data-i18n="tfu10Date" class="caption_date"
                     >August 12, 2012</span
                   >
                 </div>
@@ -721,13 +722,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu09Title"
+                      data-i18n="tfu09Title"
                       href="https://www.teamfortress.com/asmissmasstory/"
                       >A Smissmas Story</a
                     ></span
                   >
 
-                  <span id="tfu09Date" class="caption_date"
+                  <span data-i18n="tfu09Date" class="caption_date"
                     >December 15, 2011</span
                   >
                 </div>
@@ -744,13 +745,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu08Title"
+                      data-i18n="tfu08Title"
                       href="https://www.teamfortress.com/truemeaning/"
                       >True Meaning</a
                     ></span
                   >
 
-                  <span id="tfu08Date" class="caption_date"
+                  <span data-i18n="tfu08Date" class="caption_date"
                     >December 13, 2011</span
                   >
                 </div>
@@ -767,13 +768,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu07Title"
+                      data-i18n="tfu07Title"
                       href="https://www.teamfortress.com/bombinomicon/"
                       >Bombinomicon</a
                     ></span
                   >
 
-                  <span id="tfu07Date" class="caption_date"
+                  <span data-i18n="tfu07Date" class="caption_date"
                     >October 27, 2011</span
                   >
                 </div>
@@ -790,13 +791,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu06Title"
+                      data-i18n="tfu06Title"
                       href="https://www.teamfortress.com/grordborts/comic/"
                       >Dr. Grordbort's Crash Landing</a
                     ></span
                   >
 
-                  <span id="tfu06Date" class="caption_date">July 20, 2011</span>
+                  <span data-i18n="tfu06Date" class="caption_date">July 20, 2011</span>
                 </div>
               </div>
 
@@ -811,13 +812,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu05Title"
+                      data-i18n="tfu05Title"
                       href="https://www.teamfortress.com/meetthedirector/"
                       >Meet the Director</a
                     ></span
                   >
 
-                  <span id="tfu05Date" class="caption_date">May 5, 2011</span>
+                  <span data-i18n="tfu05Date" class="caption_date">May 5, 2011</span>
                 </div>
               </div>
 
@@ -832,13 +833,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu04Title"
+                      data-i18n="tfu04Title"
                       href="https://www.teamfortress.com/bidwells_big_plan/"
                       >Bidwell's Big Plan</a
                     ></span
                   >
 
-                  <span id="tfu04Date" class="caption_date"
+                  <span data-i18n="tfu04Date" class="caption_date"
                     >September 30, 2010</span
                   >
                 </div>
@@ -855,13 +856,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu03Title"
+                      data-i18n="tfu03Title"
                       href="https://www.teamfortress.com/loosecanon/"
                       >Loose Canon</a
                     ></span
                   >
 
-                  <span id="tfu03Date" class="caption_date">July 2, 2010</span>
+                  <span data-i18n="tfu03Date" class="caption_date">July 2, 2010</span>
                 </div>
               </div>
 
@@ -876,13 +877,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu02Title"
+                      data-i18n="tfu02Title"
                       href="https://www.teamfortress.com/macupdate/comic/"
                       >A Visual History</a
                     ></span
                   >
 
-                  <span id="tfu02Date" class="caption_date">June 10, 2010</span>
+                  <span data-i18n="tfu02Date" class="caption_date">June 10, 2010</span>
                 </div>
               </div>
 
@@ -897,13 +898,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu01Title"
+                      data-i18n="tfu01Title"
                       href="https://www.teamfortress.com/war/administrator/"
                       >WAR!</a
                     ></span
                   >
 
-                  <span id="tfu01Date" class="caption_date"
+                  <span data-i18n="tfu01Date" class="caption_date"
                     >December 17, 2009</span
                   >
                 </div>
@@ -922,13 +923,13 @@
                 <div class="comic_caption">
                   <span class="caption_main"
                     ><a
-                      id="tfu00Title"
+                      data-i18n="tfu00Title"
                       href="https://www.teamfortress.com/sniper_vs_spy/day07_english.htm"
                       >The Insult That Made a "Jarate Master" Out of Sniper</a
                     ></span
                   >
 
-                  <span id="tfu00Date" class="caption_date">May 20, 2009</span>
+                  <span data-i18n="tfu00Date" class="caption_date">May 20, 2009</span>
                 </div>
               </div>
 
@@ -937,7 +938,7 @@
 
             <div id="saxton_container">
               <div class="sectionSeparatorContainer">
-                <div class="sectionSeparatorText" id="saxtonSeries">SAXTON SERIES</div>
+                <div class="sectionSeparatorText" data-i18n="saxtonSeries">SAXTON SERIES</div>
                 <div class="sectionSeparatorLine"></div>
               </div>
 
@@ -971,10 +972,10 @@
                 /></a>
               </div>
 
-              <span id="saxtonSeriesTitle" class="caption_main">
+              <span data-i18n="saxtonSeriesTitle" class="caption_main">
                 Series of Saxton Hale Comic Book Covers
               </span>
-              <span id="saxtonSeriesDate" class="caption_date">2009</span>
+              <span data-i18n="saxtonSeriesDate" class="caption_date">2009</span>
             </div>
           </div>
         </div>
@@ -992,7 +993,7 @@
             <img src="/images/druns.png" alt="DRUNs" />
           </a>
           <div id="footerText">
-            <p id="footerInfo">
+            <p data-i18n="footerInfo">
               Valve, the Valve logo, Steam, the Steam logo, Team Fortress, and
               the Team Fortress logo are trademarks and/or registered trademarks
               of
@@ -1004,13 +1005,13 @@
             </p>
             <div id="footerLinks">
               <ul>
-                <li><a id="contact" href="/contact">Contact</a></li>
-                <li><a id="privacy" href="privacy.txt">Privacy</a></li>
+                <li><a data-i18n="contact" href="/contact">Contact</a></li>
+                <li><a data-i18n="privacy" href="privacy.txt">Privacy</a></li>
                 <li>
-                  <a id="attributions" href="/attributions">Attributions</a>
+                  <a data-i18n="attributions" href="/attributions">Attributions</a>
                 </li>
                 <li>
-                  <a id="translationPage" href="/translationpage.html"
+                  <a data-i18n="translationPage" href="/translationpage.html"
                     >Super secret translation page</a
                   >
                 </li>
