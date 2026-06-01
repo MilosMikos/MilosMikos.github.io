@@ -1,4 +1,3 @@
 files:
-  - source: /scripts/translations.js
-    translation: /scripts/translations.js
-    multilingual: 1
+  - source: /locales/en.json
+    translation: /locales/%locale%.json
