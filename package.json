@@ -1,0 +1,12 @@
+{
+    "name": "tf2tp-site",
+    "version": "1.0.0",
+    "description": "TF2 Comics Translation Project website",
+    "scripts": {
+      "build": "eleventy",
+      "start": "eleventy --serve"
+    },
+    "devDependencies": {
+      "@11ty/eleventy": "^2.0.1"
+    }
+  }
