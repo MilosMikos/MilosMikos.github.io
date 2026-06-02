@@ -1,0 +1,54 @@
+{# =====================================================
+   nav.njk
+   La variable `activePage` détermine quel lien est mis
+   en couleur. Valeurs possibles :
+   "about" | "team" | "translations" | "help"
+   ===================================================== #}
+
+<div id="spNavMenu">
+  <a class="aHoverVertShift"
+     id="aboutButtonText"
+     href="/about.html"
+     {% if activePage == "about" %}style="color: #a03f02"{% endif %}>
+    About
+  </a>
+
+  <a class="aHoverVertShift"
+     id="teamButtonText"
+     href="/team.html"
+     {% if activePage == "team" %}style="color: #a03f02"{% endif %}>
+    Our Team
+  </a>
+
+  <a class="aHoverVertShift"
+     id="otherTranslationsButtonText"
+     href="/moreTranslations.html"
+     {% if activePage == "translations" %}style="color: #a03f02"{% endif %}>
+    Other translation projects
+  </a>
+
+  <a class="aHoverVertShift"
+     id="helpUsButtonText"
+     href="/help.html"
+     {% if activePage == "help" %}style="color: #a03f02"{% endif %}>
+    Help us
+  </a>
+
+  <a class="aHoverVertShift"
+     href="/comics/downloader.html"
+     style="padding: 12px 24px;
+            background: #b35215;
+            border: 2px solid #b35215;
+            border-radius: 8px;
+            font-family: Host Grotesk;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: rgb(237, 237, 226);
+            font-size: clamp(5pt, 15pt, 18pt);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;">
+    Download
+  </a>
+</div>
