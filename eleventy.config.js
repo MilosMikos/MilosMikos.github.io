@@ -1,11 +1,10 @@
 module.exports = function(eleventyConfig) {
-    // Copie les fichiers statiques tels quels
-    eleventyConfig.addPassthroughCopy("scripts");
-    eleventyConfig.addPassthroughCopy("main.css");
-    eleventyConfig.addPassthroughCopy("fonts.css");
-    eleventyConfig.addPassthroughCopy("fonts");
-    eleventyConfig.addPassthroughCopy("images");
-    eleventyConfig.addPassthroughCopy("comics");
+    eleventyConfig.addPassthroughCopy({ "main.css": "main.css" });
+    eleventyConfig.addPassthroughCopy({ "fonts.css": "fonts.css" });
+    eleventyConfig.addPassthroughCopy({ "scripts": "scripts" });
+    eleventyConfig.addPassthroughCopy({ "images": "images" });
+    eleventyConfig.addPassthroughCopy({ "fonts": "fonts" });
+    eleventyConfig.addPassthroughCopy({ "comics": "comics" });
   
     return {
       dir: {
