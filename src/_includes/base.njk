@@ -6,25 +6,40 @@
 
     <title>{{ title }}</title>
 
-    <link rel="shortcut icon" href="images/favicon.svg" />
-    <link rel="stylesheet" href="main.css?v=14" />
-    <link rel="stylesheet" href="fonts.css" />
+    <link rel="shortcut icon" href="/images/favicon.svg" />
+    <link rel="stylesheet" href="/main.css?v=14" />
+    <link rel="stylesheet" href="/fonts.css" />
 
     <script src="/scripts/main.js" defer></script>
-    <script src="/scripts/translations.js" defer></script>
-    <script src="/scripts/language-selector.js" defer></script>
+    <script src="/locales/i18n.js" defer></script>
+    <script src="/scripts/comicsManager.js" defer></script>
+    <script src="/scripts/languageSwitcher.js" defer></script>
 
     {% if pageStyle %}
-    <style>{{ pageStyle }}</style>
+    <style>{{ pageStyle | safe }}</style>
     {% endif %}
 
     {% if pageScript %}
-    <script>{{ pageScript }}</script>
+    <script>{{ pageScript | safe }}</script>
     {% endif %}
   </head>
 
   <body>
     {% include "header.njk" %}
+
+    {% if socialMedia %}
+    <div id="socialMediaIcons">
+      <a class="buttonIcon" href="https://discord.gg/wFRM6daVBd" target="_blank">
+        <img src="/images/platforms/discord.svg" alt="discord" />
+      </a>
+    </div>
+    {% endif %}
+
+    {% if titleBlock %}
+    <div id="title">
+      <a href="/"><img id="titleImage" src="/images/TF2TP_logo.svg" /></a>
+    </div>
+    {% endif %}
 
     <div id="main" style="margin-top: {{ marginTop | default('5vh') }}">
       <a name="top"></a>
@@ -32,7 +47,9 @@
         <div class="boxshadowBox">
           <div id="primaryHeaderArea">
             <div id="logoLink">
-              <a href="/"><img id="headerAreaImage" src="images/Logo_TF2_flat.svg" /></a>
+              <a href="/">
+                <img id="headerAreaImage" src="{{ headerLogo | default('/images/Logo_TF2_flat.svg') }}" />
+              </a>
             </div>
             {% include "nav.njk" %}
           </div>

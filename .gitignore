@@ -3,3 +3,6 @@
 devtools.html
 .vscode
 devtools
+node_modules
+package-lock.json
+_site

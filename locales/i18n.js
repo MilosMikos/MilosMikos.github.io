@@ -37,6 +37,7 @@ const I18n = (() => {
       localStorage.setItem('lang', lang);
       document.documentElement.lang = lang.toLowerCase();
       return { lang, dict };
+      console.log(`applied language ${lang}`);
     }
   
     async function init() {
