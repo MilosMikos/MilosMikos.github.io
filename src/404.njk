@@ -1,18 +1,60 @@
 ---
-layout: base.njk
-title: 404 — TF2TP
-activePage: ""
 permalink: /404.html
 ---
-
-<div class="textSubject">
-  <img src="/images/blurbImages/menu-yeti.png" />
-
-  <h1>404</h1>
-  <p>
-    This page doesn't exist, or has been moved. Maybe a Spy took it.
-  </p>
-  <p>
-    <a href="/" style="color: #b35215">← Back to home</a>
-  </p>
-</div>
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 ALERT !</title>
+  <link rel="shortcut icon" href="/images/favicon.svg">
+  <link rel="stylesheet" href="/fonts.css">
+  <style>
+    body {
+      background: #262323;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      font-family: GravePresse;
+      flex-direction: column;
+      color: rgb(242, 46, 46);
+    }
+    img {
+      height: 85vh;
+      width: auto;
+      display: block;
+      border-radius: 5px;
+    }
+    #safeButton {
+      margin-top: 1rem;
+      padding: 10px 24px;
+      background: transparent;
+      border: 2px solid rgb(242, 46, 46);
+      border-radius: 8px;
+      color: rgb(242, 46, 46);
+      font-family: GravePresse;
+      font-size: 1rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    #safeButton:hover {
+      background: rgb(242, 46, 46);
+      color: #262323;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="404">
+    Error 404 ! This page ! Couldn't be found !
+  </h1>
+  <!--TODO: It could be very funny if we edited meet the spy so that it says this sentence.
+  Red spy would be the page, the "scout" would be the page we're looking for,
+  I DRUNs the dev could be the soldier, and the heavy would be you, the User. <3
+  if you're reading this message !-->
+  <a href="https://weedsoldiertf2.com/">
+    <img src="/images/GIFs/meetTheSpy.gif" alt="Error 404">
+  </a>
+  <a href="/" id="safeButton">← Back to safety</a>
+</body>
+</html>
