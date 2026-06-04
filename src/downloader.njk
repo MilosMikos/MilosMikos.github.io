@@ -62,7 +62,7 @@ pageStyle: |
     font-size: 12px; display: none;
   }
   .comic-card.unavailable .unavailable-badge { display: block; }
-  .select-controls { display: flex; gap: 10px; margin-bottom: 20px; }
+  .select-controls { display: flex; gap: 10px; }
   .control-btn {
     padding: 10px 20px; background: white; border: 2px solid #c8c8be;
     border-radius: 8px; font-family: Host Grotesk; font-weight: 600;
@@ -146,8 +146,8 @@ pageStyle: |
 
 <div class="textSubject">
   <img src="/images/blurbImages/menu-yeti.png" />
-  <h1>Download TF2 Comics</h1>
-  <p>
+  <h1 data-i18n="downloadTitle">Download TF2 Comics</h1>
+  <p data-i18n="downloadText">
     Select the comics you want to download by clicking on their covers.
     You can select multiple comics and download them all at once!
   </p>
@@ -158,17 +158,17 @@ pageStyle: |
   {# ── 1. Sélection des comics ── #}
   <div class="download-section">
     <div class="section-header">
-      <h2 class="section-title">1. Select Comics</h2>
+      <h2 class="section-title" data-i18n="downloadInstructionSelect">1. Select Comics</h2>
       <div class="select-controls">
-        <button class="control-btn" onclick="selectAllComics()">✓ Select All</button>
-        <button class="control-btn" onclick="deselectAllComics()">✗ Clear Selection</button>
+        <button class="control-btn" onclick="selectAllComics()" data-i18n="comicSelectButtonAll">✓ Select All</button>
+        <button class="control-btn" onclick="deselectAllComics()" data-i18n="comicSelectButtonNone">✗ Clear Selection</button>
       </div>
     </div>
 
     <div class="series-tabs">
-      <button class="series-tab active" onclick="switchSeries('all', event)">All Comics</button>
-      <button class="series-tab"        onclick="switchSeries('main', event)">Main Comics</button>
-      <button class="series-tab"        onclick="switchSeries('update', event)">Update Comics</button>
+      <button class="series-tab active" onclick="switchSeries('all', event)"    data-i18n="filterComicsAll">All Comics</button>
+      <button class="series-tab"        onclick="switchSeries('main', event)"   data-i18n="filterComicsMain">Main Comics</button>
+      <button class="series-tab"        onclick="switchSeries('update', event)" data-i18n="filterComicsUpdate">Update Comics</button>
     </div>
 
     <div class="comics-grid" id="comicsGrid">
@@ -179,7 +179,7 @@ pageStyle: |
   {# ── 2. Options de téléchargement ── #}
   <div class="download-section">
     <div class="section-header">
-      <h2 class="section-title">2. Download Options</h2>
+      <h2 class="section-title" data-i18n="downloadInstructionDownload">2. Download Options</h2>
     </div>
 
     <div class="options-panel">
@@ -187,10 +187,10 @@ pageStyle: |
       {# Sélection des langues #}
       <div class="form-group">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-          <label class="form-label" style="margin-bottom:0">Languages</label>
+          <label class="form-label" style="margin-bottom:0" data-i18n="languages">Languages</label>
           <div style="display:flex; gap:10px;">
-            <button class="control-btn" style="padding:6px 12px; font-size:12px;" onclick="selectAllLangs()">✓ All Languages</button>
-            <button class="control-btn" style="padding:6px 12px; font-size:12px;" onclick="clearAllLangs()">✗ Clear Languages</button>
+            <button class="control-btn" style="padding:6px 12px; font-size:12px;" onclick="selectAllLangs()" data-i18n="languageSelectAll">✓ All Languages</button>
+            <button class="control-btn" style="padding:6px 12px; font-size:12px;" onclick="clearAllLangs()"  data-i18n="languageSelectNone">✗ Clear Languages</button>
           </div>
         </div>
 
@@ -207,14 +207,14 @@ pageStyle: |
           <div class="lang-item" data-lang="SW"><img src="https://cdn.countryflags.com/thumbs/sweden/flag-800.png" /><span>SW</span></div>
         </div>
 
-        <div class="info-box" id="langInfo">
+        <div class="info-box" id="langInfo" data-i18n="languageSelectionText">
           Select one or several languages. If a language is missing for a comic, it will be skipped.
         </div>
       </div>
 
       {# Sélection du format #}
       <div class="form-group">
-        <label class="form-label">Format</label>
+        <label class="form-label" data-i18n="format">Format</label>
         <div class="format-options">
           <div class="format-radio">
             <input type="radio" name="format" id="formatZip" value="zip" checked />
@@ -229,19 +229,37 @@ pageStyle: |
 
       {# Bouton de téléchargement #}
       <button class="download-btn-big" id="downloadBtn" onclick="initiateDownload()" disabled>
-        <svg fill="currentColor" viewBox="0 0 20 20">
+        <svg id="downloadBtnIconIdle" fill="currentColor" viewBox="0 0 20 20" style="flex-shrink:0;">
           <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
         </svg>
-        Download Selected as ZIP/CBZ
+        <svg id="downloadBtnIconSpin" fill="currentColor" viewBox="0 0 20 20" style="flex-shrink:0; display:none; animation:spin 1s linear infinite;">
+          <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
+        </svg>
+        <span id="downloadBtnLabel" data-i18n="downloadBtnLabel">Download Selected as ZIP/CBZ</span>
       </button>
 
       {# Récapitulatif de la sélection #}
       <div class="selection-summary">
-        <div class="summary-row"><span class="summary-label">Selected:</span>   <span class="summary-value" id="sumCount">0 comics</span></div>
-        <div class="summary-row"><span class="summary-label">Languages:</span>  <span class="summary-value" id="sumLangs">-</span></div>
-        <div class="summary-row"><span class="summary-label">Total pages:</span><span class="summary-value" id="sumPages">0 pages</span></div>
-        <div class="summary-row"><span class="summary-label">Est. size:</span>  <span class="summary-value" id="sumSize">0 MB</span></div>
-        <div class="summary-row"><span class="summary-label">Format:</span>     <span class="summary-value" id="sumFormat">ZIP</span></div>
+        <div class="summary-row">
+          <span class="summary-label" data-i18n="languageSelectionSynopsis">Selected:</span>
+          <span class="summary-value"><span id="sumCount">0</span> <span data-i18n="comics">comics</span></span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label" data-i18n="languageSelectionLanguages">Languages:</span>
+          <span class="summary-value" id="sumLangs">-</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label" data-i18n="languageSelectionPagesTotal">Total pages:</span>
+          <span class="summary-value"><span id="sumPages">0</span> <span data-i18n="pages">pages</span></span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label" data-i18n="languageSelectionEstSize">Est. size:</span>
+          <span class="summary-value">~<span id="sumSize">0</span> <span data-i18n="megabytes">MB</span></span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label" data-i18n="languageSelectionFormat">Format:</span>
+          <span class="summary-value" id="sumFormat">ZIP</span>
+        </div>
       </div>
 
     </div>{# /options-panel #}
@@ -256,6 +274,34 @@ pageStyle: |
 <script>
   const randomTF07 = Math.floor(Math.random() * 3) + 1;
   const tf07CoverUrl = `/comics/covers/main/tf07_cover${randomTF07}.png`;
+
+  // ── Dictionnaire i18n actif ─────────────────────────────────────────────────
+  // Alimenté une fois I18n.init() résolu dans DOMContentLoaded.
+  // Toutes les chaînes dynamiques (alerts, labels du bouton, badges) passent
+  // par translateVar() plutôt que d'être hardcodées en anglais.
+  let _i18nDict = {};
+
+  /**
+   * translateVar(key, fallback, replacements?)
+   *
+   * Cherche `key` dans le dictionnaire i18n actif.
+   * Si la clé est absente, retourne `fallback`.
+   * `replacements` est un objet optionnel pour interpoler des variables :
+   *   translateVar("alertSuccessMulti", "Downloaded {n} comics!", { n: 5 })
+   *   → "Downloaded 5 comics!"  (ou la traduction équivalente)
+   *
+   * @param {string} key          - Clé i18n
+   * @param {string} fallback     - Valeur de repli (EN)
+   * @param {Object} [replacements] - Variables à interpoler ({placeholder: valeur})
+   * @returns {string}
+   */
+  function translateVar(key, fallback = "", replacements = {}) {
+    let str = _i18nDict[key] || fallback;
+    for (const [placeholder, value] of Object.entries(replacements)) {
+      str = str.replace(new RegExp(`\\{${placeholder}\\}`, "g"), value);
+    }
+    return str;
+  }
 
   // ── Base de données des comics ──────────────────────────────────────────────
   const comicsData = {
@@ -341,26 +387,31 @@ pageStyle: |
         cover.textContent = comic.id.toUpperCase();
       }
 
-      // Badges
+      // Badge de sélection (✓)
       const badge = document.createElement("div");
       badge.className = "selection-badge";
       badge.textContent = "✓";
 
+      // Badge "indisponible" — traduit via translateVar()
       const unavailableBadge = document.createElement("div");
       unavailableBadge.className = "unavailable-badge";
-      unavailableBadge.textContent = "Unavailable";
+      unavailableBadge.dataset.i18n = "unavailableBadge";
+      unavailableBadge.textContent = translateVar("unavailableBadge", "Unavailable");
 
-      // Infos textuelles
+      // Infos textuelles — data-i18n sur le nom pour que i18n.js le traduise
       const info = document.createElement("div");
       info.className = "comic-info";
       info.innerHTML = `
-        <div class="comic-name">${comic.name}</div>
-        <div class="comic-meta">${comic.pages} pages • ${comic.langs.join(", ")}</div>
+        <div class="comic-name" data-i18n="${comic.id}Title">${comic.name}</div>
+        <div class="comic-meta">${comic.pages} <span data-i18n="pages">pages</span> • ${comic.langs.join(", ")}</div>
       `;
 
       card.append(cover, badge, unavailableBadge, info);
       grid.appendChild(card);
     });
+
+    // Re-appliquer les traductions sur les nouveaux nœuds injectés dynamiquement
+    I18n.init();
 
     updateAvailability();
   }
@@ -368,7 +419,7 @@ pageStyle: |
   // ── Bascule de série ────────────────────────────────────────────────────────
   function switchSeries(series, event) {
     currentSeries = series;
-    document.querySelectorAll(".series-tab").forEach(t => t.classList.remove("active"));
+    document.querySelectorAll(".series-tab").forEach(tab => tab.classList.remove("active"));
     if (event?.target) event.target.classList.add("active");
     renderComics();
   }
@@ -436,11 +487,12 @@ pageStyle: |
       }
     });
 
-    document.getElementById("sumCount").textContent = `${selected.length} comic${selected.length !== 1 ? "s" : ""}`;
-    document.getElementById("sumLangs").textContent  = selectedLangs.size === 0 ? "All available"
+    document.getElementById("sumCount").textContent  = selected.length;
+    document.getElementById("sumLangs").textContent  = selectedLangs.size === 0
+      ? translateVar("allAvailable", "All available")
       : (langsToDownload.size > 0 ? [...langsToDownload].join(", ") : "-");
-    document.getElementById("sumPages").textContent  = `${totalPages} pages`;
-    document.getElementById("sumSize").textContent   = `~${Math.round(totalPages * 0.8)} MB`;
+    document.getElementById("sumPages").textContent  = totalPages;
+    document.getElementById("sumSize").textContent   = Math.round(totalPages * 0.8);
     document.getElementById("sumFormat").textContent = format.toUpperCase();
 
     document.getElementById("downloadBtn").disabled = !(selected.length > 0 && selectedLangs.size > 0);
@@ -463,24 +515,19 @@ pageStyle: |
 
   // ── UI du bouton pendant le téléchargement ──────────────────────────────────
   function showProgress(current, total, label) {
-    const btn = document.getElementById("downloadBtn");
-    btn.disabled = true;
-    btn.innerHTML = `
-      <svg fill="currentColor" viewBox="0 0 20 20" style="animation:spin 1s linear infinite;">
-        <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd"/>
-      </svg>
-      Downloading ${current}/${total}: ${label}
-    `;
+    document.getElementById("downloadBtn").disabled              = true;
+    document.getElementById("downloadBtnIconIdle").style.display = "none";
+    document.getElementById("downloadBtnIconSpin").style.display = "";
+    document.getElementById("downloadBtnLabel").textContent      =
+      `${translateVar("downloading", "Downloading")} ${current}/${total}: ${label}`;
   }
 
   function resetButton() {
-    const btn = document.getElementById("downloadBtn");
-    btn.innerHTML = `
-      <svg fill="currentColor" viewBox="0 0 20 20">
-        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
-      </svg>
-      Download Selected as ZIP/CBZ
-    `;
+    document.getElementById("downloadBtn").disabled              = false;
+    document.getElementById("downloadBtnIconIdle").style.display = "";
+    document.getElementById("downloadBtnIconSpin").style.display = "none";
+    document.getElementById("downloadBtnLabel").textContent      =
+      translateVar("downloadBtnLabel", "Download Selected as ZIP/CBZ");
     updateSummary();
   }
 
@@ -517,17 +564,17 @@ pageStyle: |
       }
     }
 
-    showProgress(1, 1, "Generating ZIP… please wait!");
+    showProgress(1, 1, translateVar("generatingZip", "Generating ZIP… please wait!"));
     try {
       const blob = await mainZip.generateAsync({ type: "blob", compression: "DEFLATE", compressionOptions: { level: 6 } });
       saveAs(blob, `TF2_Comics_${new Date().toISOString().slice(0,10)}.zip`);
       resetButton();
       errors.length
-        ? alert(`Download completed with issues:\n\n${errors.join("\n")}`)
-        : alert(`✅ Successfully downloaded ${selectedComicsList.length} comics!`);
+        ? alert(translateVar("alertIssues", "Download completed with issues:\n\n{errors}", { errors: errors.join("\n") }))
+        : alert(`✅ ${translateVar("alertSuccessMulti", "Successfully downloaded {n} comics!", { n: selectedComicsList.length })}`);
     } catch (err) {
       resetButton();
-      alert(`Error generating ZIP: ${err.message}`);
+      alert(translateVar("alertErrorZip", "Error generating ZIP: {msg}", { msg: err.message }));
     }
   }
 
@@ -557,7 +604,7 @@ pageStyle: |
             } catch { fail++; }
           }
 
-          if (ok === 0) throw new Error("No pages found");
+          if (ok === 0) throw new Error(translateVar("alertNoPages", "No pages found"));
           const blob = await zip.generateAsync({ type: "blob", compression: "DEFLATE", compressionOptions: { level: 6 } });
           saveAs(blob, `${comic.id}_${lang}.cbz`);
           if (fail > 0) errors.push(`${comic.name} (${lang}): ${fail} pages missing`);
@@ -570,8 +617,8 @@ pageStyle: |
 
     resetButton();
     errors.length
-      ? alert(`Download completed with issues:\n\n${errors.join("\n")}`)
-      : alert(`✅ Successfully downloaded ${total} comics!`);
+      ? alert(translateVar("alertIssues", "Download completed with issues:\n\n{errors}", { errors: errors.join("\n") }))
+      : alert(`✅ ${translateVar("alertSuccessMulti", "Successfully downloaded {n} comics!", { n: total })}`);
   }
 
   // ── Point d'entrée du téléchargement ───────────────────────────────────────
@@ -579,18 +626,28 @@ pageStyle: |
     const format = document.querySelector('input[name="format"]:checked')?.value ?? "zip";
     const list   = getComicsList().filter(c => selectedComics.has(c.id));
 
-    if (list.length === 0)       { alert("Please select at least one comic.");    return; }
-    if (selectedLangs.size === 0) { alert("Please select at least one language."); return; }
+    if (list.length === 0) {
+      alert(translateVar("alertSelectComic", "Please select at least one comic."));
+      return;
+    }
+    if (selectedLangs.size === 0) {
+      alert(translateVar("alertSelectLang", "Please select at least one language."));
+      return;
+    }
 
     format === "zip" ? await downloadAsZip(list) : await downloadAsCbz(list);
   }
 
   // ── Init ────────────────────────────────────────────────────────────────────
-  window.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("DOMContentLoaded", async () => {
+    // On attend la résolution d'I18n.init() pour récupérer le dictionnaire actif
+    // avant tout rendu, afin que translateVar() ait ses valeurs dès le premier appel.
+    const { dict } = await I18n.init();
+    _i18nDict = dict;
+
     setupLangGrid();
     renderComics();
     updateSummary();
-    // Recalcul du résumé si l'utilisateur change de format
     document.querySelectorAll('input[name="format"]').forEach(r =>
       r.addEventListener("change", updateSummary)
     );
