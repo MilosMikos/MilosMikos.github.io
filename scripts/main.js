@@ -17,3 +17,14 @@ window.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", handleScroll);
   });
   
+  function playSound(src, volume = 0.5) {
+    const audio = new Audio(src);
+    audio.volume = volume;
+    audio.play().catch(() => {});
+  }
+
+  window.IDDQD = function() {
+    playSound("/sounds/haaax.mp3");
+    console.log("Degreelessness mode on");
+  };
+  

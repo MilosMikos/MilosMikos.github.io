@@ -7,34 +7,35 @@
 
 <div id="spNavMenu">
   <a class="aHoverVertShift"
-     id="aboutButtonText"
+     data-i18n="aboutButtonText"
      href="/about.html"
      {% if activePage == "about" %}style="color: #a03f02"{% endif %}>
     About
   </a>
 
   <a class="aHoverVertShift"
-     id="teamButtonText"
+     data-i18n="teamButtonText"
      href="/team.html"
      {% if activePage == "team" %}style="color: #a03f02"{% endif %}>
     Our Team
   </a>
 
   <a class="aHoverVertShift"
-     id="otherTranslationsButtonText"
+     data-i18n="otherTranslationsButtonText"
      href="/moreTranslations.html"
      {% if activePage == "translations" %}style="color: #a03f02"{% endif %}>
     Other translation projects
   </a>
 
   <a class="aHoverVertShift"
-     id="helpUsButtonText"
+     data-i18n="helpUsButtonText"
      href="/help.html"
      {% if activePage == "help" %}style="color: #a03f02"{% endif %}>
     Help us
   </a>
 
-  <a class="aHoverVertShift"
+  <a data-i18n="downloadButtonText"
+  class="aHoverVertShift"
      href="/comics/downloader.html"
      style="padding: 12px 24px;
             background: #b35215;
