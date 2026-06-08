@@ -1,18 +1,18 @@
 // scripts/i18n.js
 const I18n = (() => {
-    const SUPPORTED = ['EN','FR','ES','DE','IT','PL','TR','FI','KR','SW','CZ','RO','ET','SK','PTbr'];
+    const SUPPORTED = ['en','fr','es','de','it','pl','tr','fi','kr','sw','cs','ro','et','sk','ptbr'];
     const _defaults = {};
   
     function detectLang() {
       const saved = localStorage.getItem('lang');
       if (saved && SUPPORTED.includes(saved)) return saved;
-      const browser = (navigator.language || '').split('-')[0].toUpperCase();
-      return SUPPORTED.includes(browser) ? browser : 'EN';
+      const browser = (navigator.language || '').split('-')[0].toLowerCase();
+      return SUPPORTED.includes(browser) ? browser : 'en';
     }
   
     async function load(lang) {
       const res = await fetch(`/locales/${lang}.json`);
-      if (!res.ok) return load('EN');
+      if (!res.ok) return load('en');
       return res.json();
     }
   
@@ -28,16 +28,16 @@ const I18n = (() => {
     }
   
     async function setLang(lang) {
+      lang = lang.toLowerCase();
       if (!SUPPORTED.includes(lang)) {
-        console.warn(`I18n: unsupported language "${lang}", falling back to EN`);
-        lang = 'EN';
+        console.warn(`I18n: unsupported language "${lang}", falling back to en`);
+        lang = 'en';
       }
       const dict = await load(lang);
       applyDict(dict);
       localStorage.setItem('lang', lang);
-      document.documentElement.lang = lang.toLowerCase();
+      document.documentElement.lang = lang;
       return { lang, dict };
-      console.log(`applied language ${lang}`);
     }
   
     async function init() {
