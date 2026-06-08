@@ -38,3 +38,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
+      - name: Verify _site output
+        run: |
+          echo "Contenu de _site :"
+          ls -la _site/
+          echo "Nombre de fichiers :"
+          find _site -type f | wc -l
