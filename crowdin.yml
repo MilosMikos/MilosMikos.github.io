@@ -1,5 +1,3 @@
 files:
   - source: /locales/en.json
-    ignore:
-      - /locales/en.json
     translation: /locales/%two_letters_code%.json
