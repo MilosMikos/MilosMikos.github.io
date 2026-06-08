@@ -8,7 +8,7 @@ permalink: /team.html
 <div class="textSubject">
   <img src="/images/blurbImages/menu-yeti.png" />
   <h1 data-i18n="teamButtonText">Our Team</h1>
-  <p id="teamInfoText">
+  <p id="teamInfoText" data-i18n="teamInfoText">
     Our team is not only full of translators, it is filled with talented people
     and job looking people, open commissions people and other "something" people
     to the point it's full of people, so make sure to click on those icons on
@@ -25,117 +25,135 @@ const TEAMS = [
     id: "FR", name: "FRENCH TEAM",
     members: [
       { name: "DRUNs", img: "/images/userImages/DRUNs.png",
-        roles: [{ t: "Founder", c: "#1fa5a2" }, { t: "Web team (I see you)", c: "#c23c3c" }, { t: "Kit dev", c: "#7c7cf1" }, { t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Founder", k: "founder", c: "#1fa5a2" }, { t: "Web team (I see you)", k: "webDev", c: "#c23c3c" }, { t: "Kit dev", k: "kitDevelopper", c: "#7c7cf1" }, { t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "steam", url: "https://steamcommunity.com/id/secretlyapyro" }, { type: "github", url: "https://github.com/DRUN-s/DRUN-s.github.io" }, { type: "youtube", url: "https://youtube.com/@druns0?si=-Ep7HR6sBInYhiFt" }, { type: "discord", url: "https://discord.gg/wFRM6daVBd" }] },
       { name: "Drama", img: "/images/userImages/Drama.png",
-        roles: [{ t: "Kit artist", c: "#9d2c6c" }, { t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Kit artist", k: "kitArtist", c: "#9d2c6c" }, { t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "instagram", url: "https://www.instagram.com/_dramart_" }, { type: "tumblr", url: "https://www.tumblr.com/dramart06" }, { type: "reddit", url: "https://www.reddit.com/u/Far-Funny80/s/1yl9FFBra9" }, { type: "twitter", url: "https://x.com/dramartt" }, { type: "steam", url: "https://steamcommunity.com/profiles/76561199436213204" }] },
       { name: "Ghomera", img: "/images/userImages/Ghomera.png",
-        roles: [{ t: "Kit dev", c: "#7c7cf1" }, { t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Kit dev", k: "kitDevelopper", c: "#7c7cf1" }, { t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "steam", url: "https://steamcommunity.com/profiles/76561198077853308/" }] },
-      { name: "Raidebaron", img: "/images/userImages/Raidebaron.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
-      { name: "Numpad0", img: "/images/userImages/Numpad0.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Raidebaron", img: "/images/userImages/Raidebaron.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
+      { name: "Numpad0", img: "/images/userImages/Numpad0.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "IT", name: "ITALIAN TEAM",
     members: [
       { name: "Valiant", img: "/images/userImages/Valiant.png",
-        roles: [{ t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "newgrounds", url: "https://thebunnybeast.newgrounds.com/" }, { type: "steam", url: "https://steamcommunity.com/profiles/76561199092623105" }] },
-      { name: "Paperellagay563", img: "/images/userImages/Paperellagay563.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
-      { name: "Saimon", img: "/images/userImages/Saimon.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Paperellagay563", img: "/images/userImages/Paperellagay563.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
+      { name: "Saimon", img: "/images/userImages/Saimon.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "DE", name: "GERMAN TEAM",
     members: [
       { name: "Nugget", img: "/images/userImages/Nugget.png",
-        roles: [{ t: "Coordinator", c: "#7fc034" }, { t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Coordinator", k: "coordinator", c: "#7fc034" }, { t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "youtube", url: "https://www.youtube.com/@rottennugget8197" }, { type: "itchio", url: "https://rottennuggetgames.itch.io/" }, { type: "twitch", url: "https://rottennuggetgames.itch.io/" }] },
-      { name: "William the Buster", img: "/images/userImages/WilliamTheBuster.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
-      { name: "TimeStorm", img: "/images/userImages/TimeStorm.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "William the Buster", img: "/images/userImages/WilliamTheBuster.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
+      { name: "TimeStorm", img: "/images/userImages/TimeStorm.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "SW", name: "SWEDISH TEAM",
     members: [
-      { name: "Cavus", img: "/images/userImages/Cavus.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Cavus", img: "/images/userImages/Cavus.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "ES", name: "SPANISH TEAM",
     members: [
-      { name: "Juan Chu8", img: "/images/userImages/JuanChu8.png", roles: [{ t: "Coordinator", c: "#7fc034" }, { t: "Translator", c: "#af5cca" }], links: [] },
-      { name: "Ra", img: "/images/userImages/Ra.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
-      { name: "Lasagna", img: "/images/userImages/Lasagna.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Juan Chu8", img: "/images/userImages/JuanChu8.png",
+        roles: [{ t: "Coordinator", k: "coordinator", c: "#7fc034" }, { t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
+      { name: "Ra", img: "/images/userImages/Ra.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
+      { name: "Lasagna", img: "/images/userImages/Lasagna.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "KR", name: "KOREAN TEAM",
     members: [
       { name: "Henry", img: "/images/userImages/Henry.png",
-        roles: [{ t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "steam", url: "https://steamcommunity.com/id/Henryexe/" }, { type: "youtube", url: "https://www.youtube.com/@Henry_exe" }] },
     ]
   },
   {
     id: "ET", name: "ESTONIAN TEAM",
     members: [
-      { name: "KrisTheBread", img: "/images/userImages/KrisTheBread.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "KrisTheBread", img: "/images/userImages/KrisTheBread.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "RO", name: "ROMANIAN TEAM",
     members: [
-      { name: "Kor", img: "/images/userImages/Kor.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Kor", img: "/images/userImages/Kor.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "CZ", name: "CZECH TEAM",
     members: [
       { name: "Herotroll", img: "/images/userImages/Herotroll.png",
-        roles: [{ t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "steam", url: "https://steamcommunity.com/id/Herotroll/" }] },
-      { name: "Termox", img: "/images/userImages/Termox.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Termox", img: "/images/userImages/Termox.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "TR", name: "TURKISH TEAM",
     members: [
       { name: "Octavio Silva", img: "/images/userImages/OctavioSilva.png",
-        roles: [{ t: "Coordinator", c: "#7fc034" }, { t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Coordinator", k: "coordinator", c: "#7fc034" }, { t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "instagram", url: "https://www.instagram.com/octaviosilvaturk/" }] },
       { name: "Nyoom", img: "/images/userImages/Nyoom.png",
-        roles: [{ t: "Kit artist", c: "#9d2c6c" }, { t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Kit artist", k: "kitArtist", c: "#9d2c6c" }, { t: "Translator", k: "translator", c: "#af5cca" }],
         links: [] },
-      { name: "Sokisati", img: "/images/userImages/Sokisati.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Sokisati", img: "/images/userImages/Sokisati.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "SK", name: "SLOVAK TEAM",
     members: [
-      { name: "Termox", img: "/images/userImages/Termox.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Termox", img: "/images/userImages/Termox.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "UK", name: "UKRAINIAN TEAM",
     members: [
-      { name: "Laiba", img: "/images/userImages/Laiba.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
-      { name: "MartianDill", img: "/images/userImages/MartianDill.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Laiba", img: "/images/userImages/Laiba.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
+      { name: "MartianDill", img: "/images/userImages/MartianDill.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "TH", name: "THAI TEAM",
     members: [
-      { name: "Kas", img: "/images/userImages/Kas.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Kas", img: "/images/userImages/Kas.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "FI", name: "FINNISH TEAM",
     members: [
       { name: "Spizium", img: "/images/userImages/Spizium.png",
-        roles: [{ t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "modworkshop", url: "https://modworkshop.net/user/spizium_makes_stuff" }] },
     ]
   },
@@ -143,17 +161,19 @@ const TEAMS = [
     id: "PL", name: "POLISH TEAM",
     members: [
       { name: "KapKap", img: "/images/userImages/KapKap.png",
-        roles: [{ t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "tumblr", url: "https://www.tumblr.com/moldingbun?source=share" }] },
-      { name: "Miki", img: "/images/userImages/Miki.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
-      { name: "SUPgent", img: "/images/userImages/SUPgent.png", roles: [{ t: "Translator", c: "#af5cca" }], links: [] },
+      { name: "Miki", img: "/images/userImages/Miki.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
+      { name: "SUPgent", img: "/images/userImages/SUPgent.png",
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }], links: [] },
     ]
   },
   {
     id: "PTbr", name: "PORTUGUESE (BRAZIL) TEAM",
     members: [
       { name: "NanDubs", img: "/images/userImages/NanDubs.png",
-        roles: [{ t: "Translator", c: "#af5cca" }],
+        roles: [{ t: "Translator", k: "translator", c: "#af5cca" }],
         links: [{ type: "instagram", url: "https://www.instagram.com/nandubsofc/" }, { type: "youtube", url: "https://youtube.com/@nandubsofc?si=4WnOXPfmmqVj6lqW" }, { type: "twitch", url: "https://www.twitch.tv/nandit0u" }] },
     ]
   },
@@ -166,13 +186,13 @@ const TEAMS = [
   TEAMS.forEach((team) => {
     container.innerHTML += `
       <div class="sectionSeparatorContainer">
-        <div class="sectionSeparatorText" id="team${team.id}">${team.name}</div>
+        <div class="sectionSeparatorText" id="team${team.id}" data-i18n="team${team.id}">${team.name}</div>
         <div class="sectionSeparatorLine"></div>
       </div>`;
 
     team.members.forEach((m) => {
       const roles = m.roles.map(r =>
-        `<div class="teamRole" style="background:${r.c}">${r.t}</div>`
+        `<div class="teamRole" style="background:${r.c}" ${r.k ? `data-i18n="${r.k}"` : ""}>${r.t}</div>`
       ).join("");
       const links = m.links.filter(l => l.url).map(l =>
         `<a target="_blank" href="${l.url}" class="${l.type}"></a>`
