@@ -6,3 +6,4 @@ devtools
 node_modules
 package-lock.json
 _site
+_TEMPLATE.njk
