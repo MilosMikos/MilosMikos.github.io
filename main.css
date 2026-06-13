@@ -43,6 +43,10 @@ p {
   min-width: 350px;
 }
 
+#titleImageContainer {
+  width: max-content;
+}
+
 #titleText {
   display: inline-block;
   flex-shrink: 0;
