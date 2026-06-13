@@ -22,11 +22,11 @@ List of things todo :
 - [x] Create a Other translation projects
   - [ ] Finding a Shorter way of saying "Other translation projects"
 - [x] Create a Help us Page
-- [ ] Reorder the footer with more relevant things
-- [ ] Create a section where we link our social media on the main page.
-- [ ] Cleanup the code from Valve's spaghetti.
+- [x] Reorder the footer with more relevant things
+- [x] Create a section where we link our social media on the main page.
+- [x] Cleanup the code from Valve's spaghetti.
 - [ ] Cleanup the code from DRUN's spaghetti.
-- [ ] Add all the language variables for all the text in `languages.js`
+- [ ] Add all the language variables for all the text in the locales
 - [x] Fix the shadow hover effect on cover images only being triggered when hovering on the image instead of the whole comic box.
 - [x] Fix the reader's fullscreen mode adapting the image to the screen by stretching it.
 - [x] Add the language switch system for the reader
