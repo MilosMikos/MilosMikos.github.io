@@ -31,7 +31,7 @@ p {
   justify-content: space-around;
   align-items: center;
   font-family: BigNoodleTitling;
-  width: 100%;
+  width: max-content;
 }
 
 #titleImage {
@@ -41,10 +41,6 @@ p {
   flex-shrink: 0;
   filter: drop-shadow(11px 18px 5px #000000);
   min-width: 350px;
-}
-
-#titleImageContainer {
-  width: max-content;
 }
 
 #titleText {
@@ -1127,5 +1123,89 @@ h5 {
 
   #covers a {
     width: calc(100% - 30px);
+  }
+}
+
+ #musicPlayer {
+  width: 100%;
+  max-width: 320px;
+  box-sizing: border-box;
+  height: 150px;
+  float: right;
+  background-color: #34302d;
+  width: max-content;
+  margin: none auto;
+  padding: 1rem;
+  padding-left: 40px;
+  margin-top: none;
+  margin-right: 3%;
+  position: relative;
+  border-radius: 30px;
+  font-family: BigNoodleTitling;
+}
+#musicPlayer > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+#musicPlayerTitle {
+width: 100%;
+  text-align: center;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: white;
+  padding-left: 0.6rem;
+  padding-right: 0.6rem;
+}
+
+/*MUSIC PLAYER*/
+
+#volume {
+	position: absolute;
+	left: 24px;
+	margin: 0 auto;
+	height: 120px;
+	width: 10px;
+	background: #555;
+	border-radius: 15px;
+	writing-mode: vertical-rl;
+  direction: rtl;
+  display: flex;
+  
+}
+#buttonPrev, #pauseMusicButton, #buttonNext {
+  background-color: #34302d;
+  border: none;
+  min-width: 48px;
+  padding: 0.3rem;
+}
+#prevMusicImg, #nextMusicImg {
+  width: 100%;
+  max-width: 70px;
+  height: auto;
+}
+#pauseMusicImg {
+height: auto;
+width: 100%;
+}
+#musicPlayerButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2rem;
+}
+@media (max-width: 700px) {
+  #musicPlayer {
+    max-width: 95vw;
+    margin-right: 5%;
+    margin-left: 0;
+  }
+
+  #musicPlayerButtons {
+    width: 100%;
+  }
+
+  #musicPlayerButtons button {
+    flex: 1 1 30%;
   }
 }

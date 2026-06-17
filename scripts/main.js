@@ -27,4 +27,3 @@ window.addEventListener("DOMContentLoaded", function () {
     playSound("/sounds/haaax.mp3");
     console.log("Degreelessness mode on");
   };
-  
