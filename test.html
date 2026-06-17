@@ -1,20 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="scripts/main.js"></script>
+
     <link rel="stylesheet" href="main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <div id="musicPlayer">
-        <p id="musicPlayerTitle"></p>
-        <button id="pauseMusic" onclick="playPauseMusic()">
-            <img src="images/pause.png" alt="Pause the music">
-        </button>
+  <div id="musicPlayer">
+        <div>
+            <p id="musicPlayerTitle"></p>
+            <div id="musicPlayerButtons">
+                <button id="buttonPrev">
+                    <img src="images/prev.svg" alt="Select previous track" onclick="prevTrack()" id="prevMusicImg">
+                </button>
+                <button id="pauseMusicButton" onclick="playPauseMusic()">
+                    <img src="images/pause.svg" alt="Pause the music" id="pauseMusicImg">
+                </button>
+                <button id="buttonNext">
+                    <img src="images/next.svg" alt="Select next track" onclick="nextTrack()" id="nextMusicImg">
+                </button>
+            </div>
+            <input type="range" id="volume">
+        </div>
+        
+        
     </div>
+</div>
 
-    
+    <script src="scripts/main.js"></script>
 </body>
 </html>
