@@ -5,6 +5,10 @@ on:
     branches:
       - main         # déploie seulement depuis main
       - 11ty-dev    # build seulement (pour tester), pas de déploiement
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build:
