@@ -817,12 +817,14 @@ h5 {
 /*====================================================================================*/
 
 #language-container {
-  position: relative;
+  position: fixed;
   transition: all 0.3s ease;
   z-index: 999;
   top: 50px;
   left: 10px;
   height: 0;
+  width: 98%;
+  margin-top: 1rem;
 }
 
 #language-container.sticky {
@@ -830,6 +832,7 @@ h5 {
   top: 20px;
   left: 10px;
   width: 98%;
+  margin-top: 0px;
 }
 
 .dropdown {
@@ -1144,7 +1147,7 @@ h5 {
   margin-right: 3%;
   position: relative;
   border-radius: 30px;
-  font-family: BigNoodleTitling;
+  border: 2px #b35215 solid;
 }
 #musicPlayer > div {
   display: flex;
@@ -1198,8 +1201,8 @@ width: 100%;
 }
 @media (max-width: 700px) {
   #musicPlayer {
-    max-width: 95vw;
-    margin-right: 5%;
+    max-width: 59vw;
+    margin-right: 2%;
     margin-left: 0;
   }
 
