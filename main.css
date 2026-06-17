@@ -1163,13 +1163,15 @@ width: 100%;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
   min-width: 200px;
+  margin-bottom: 0;
+  margin-top: 0.3rem;
 }
 
 #volume {
 	position: absolute;
 	left: 24px;
 	margin: 0 auto;
-	height: 120px;
+	height: 86px;
 	width: 10px;
 	background: #555;
 	border-radius: 15px;
