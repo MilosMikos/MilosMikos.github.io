@@ -829,6 +829,7 @@ h5 {
   position: fixed;
   top: 20px;
   left: 10px;
+  width: 98%;
 }
 
 .dropdown {
@@ -1126,6 +1127,8 @@ h5 {
   }
 }
 
+/*MUSIC PLAYER*/
+
  #musicPlayer {
   width: 100%;
   max-width: 320px;
@@ -1156,9 +1159,8 @@ width: 100%;
   color: white;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
+  min-width: 200px;
 }
-
-/*MUSIC PLAYER*/
 
 #volume {
 	position: absolute;
@@ -1199,6 +1201,10 @@ width: 100%;
     max-width: 95vw;
     margin-right: 5%;
     margin-left: 0;
+  }
+
+  #musicPlayerTitle {
+	min-width: 9.4rem;
   }
 
   #musicPlayerButtons {
