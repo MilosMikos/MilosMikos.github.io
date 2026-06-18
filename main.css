@@ -1241,13 +1241,15 @@ width: 100%;
 #maximizeIcon {
   display: none;
   float: right;
-  width: max-content;
-  height: max-content;
-  border-radius: 30px;
+  width: 45px;
+  height: 45px;
+  border-radius: 15px;
   border: 2px #b35215 solid;
   background-color: #34302d;
   padding: 0.3vw;
   margin-right:0.5rem;
+  justify-content: center;
+  align-content: center;
 }
 #maximizeIcon button {
   border: none;
