@@ -1159,17 +1159,18 @@ h5 {
 width: 100%;
   text-align: center;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
-  color: white;
+  color: #eef2e5;
   padding-left: 0.6rem;
-  padding-right: 0.6rem;
+  padding-right: 1rem;
   min-width: 200px;
   margin-bottom: 0;
   margin-top: 0.3rem;
+  text-wrap: wrap;
 }
 
 #volume {
 	position: absolute;
-	left: 24px;
+	left: 25px;
 	margin: 0 auto;
 	height: 86px;
 	width: 10px;
@@ -1179,6 +1180,14 @@ width: 100%;
   direction: rtl;
   display: flex;
   
+}
+#buttonMinimize {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  right: 8px;
+  padding: 0;
+  cursor: pointer;
 }
 #buttonPrev, #pauseMusicButton, #buttonNext {
   background-color: #34302d;
@@ -1206,10 +1215,13 @@ width: 100%;
     max-width: 59vw;
     margin-right: 2%;
     margin-left: 0;
+    height: fit-content;
   }
 
   #musicPlayerTitle {
-	min-width: 9.4rem;
+	min-width: 40vw;
+  margin-right: 0.7rem;
+  max-width: 7rem;
   }
 
   #musicPlayerButtons {
@@ -1219,4 +1231,24 @@ width: 100%;
   #musicPlayerButtons button {
     flex: 1 1 30%;
   }
+}
+
+#minimizeMusicPlayer, #maximizeIcon img {
+  width: 30px;
+  height: 30px;
+  max-width: 30px;
+}
+#maximizeIcon {
+  display: none;
+  float: right;
+  width: max-content;
+  height: max-content;
+  border-radius: 30px;
+  border: 2px #b35215 solid;
+  background-color: #34302d;
+  padding: 0.3vw;
+}
+#maximizeIcon button {
+  border: none;
+  background: transparent;
 }
