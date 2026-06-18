@@ -75,8 +75,8 @@ let music_player = document.querySelector("#musicPlayer");
       music_player.style.display = "none";
       maximise_window.style.display = "flex";
     }
-    else {
-      music_player.style.display = "fixed";
+    else if(btn=="max") {
+      music_player.style.display = "block";
       maximise_window.style.display = "none";
     }
   }
