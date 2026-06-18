@@ -66,4 +66,18 @@
   volume.addEventListener("change", function(e) {
   currTrack.volume = e.currentTarget.value / 100;
   })
+
+let music_player = document.querySelector("#musicPlayer");
+  let maximise_window = document.querySelector("#maximizeIcon");
+  // btn is our parameter, its min when its ordered to be minimized and max when maximized
+  function changeSize(btn) {
+    if (btn=="min") {
+      music_player.style.display = "none";
+      maximise_window.style.display = "flex";
+    }
+    else {
+      music_player.style.display = "flex";
+      maximise_window.style.display = "none";
+    }
+  }
   
