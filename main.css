@@ -1247,6 +1247,7 @@ width: 100%;
   border: 2px #b35215 solid;
   background-color: #34302d;
   padding: 0.3vw;
+  margin-right:0.5rem;
 }
 #maximizeIcon button {
   border: none;
