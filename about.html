@@ -105,6 +105,11 @@
       </ul>
     </div>
   </div>
+   <div id="maximizeIcon">
+    <button>
+      <img onclick="changeSize('max')" src="images/max.svg" alt="Maximize the music player">
+    </button>
+  </div>
    <div id="musicPlayer">
         <div>
             <p id="musicPlayerTitle"></p>
@@ -119,6 +124,9 @@
                     <img src="images/next.svg" alt="Select next track" onclick="nextTrack()" id="nextMusicImg">
                 </button>
             </div>
+            <button id="buttonMinimize">
+                  <img src="images/min.svg" alt="Minimize music player" onclick="changeSize('min')" id="minimizeMusicPlayer">
+            </button>
             <input type="range" id="volume">
         </div>
     </div>
