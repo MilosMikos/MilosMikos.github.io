@@ -1146,8 +1146,7 @@ h5 {
   margin-top: none;
   margin-right: 0;
   position: relative;
-  border-radius: 30px;
-  border: 2px #b35215 solid;
+  border-radius: 20px;
 }
 #musicPlayer > div {
   display: flex;
@@ -1244,7 +1243,6 @@ width: 100%;
   width: 45px;
   height: 45px;
   border-radius: 15px;
-  border: 2px #b35215 solid;
   background-color: #34302d;
   padding: 0.3vw;
   margin-right:0.5rem;
