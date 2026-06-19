@@ -159,7 +159,6 @@ body {
   
   /* Bouton aide toggle */
 .help-toggle {
-	margin-top: 10px;
 	width: 36px;
 	height: 36px;
 	border-radius: 50%;
@@ -368,8 +367,7 @@ body {
   margin-top: none;
   margin-right: 0;
   position: relative;
-  border-radius: 30px;
-  border: 2px #b35215 solid;
+  border-radius: 20px;
 }
 #musicPlayer > div {
   display: flex;
@@ -382,8 +380,6 @@ width: 100%;
   text-align: center;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   color: #eef2e5;
-  padding-left: 0.6rem;
-  padding-right: 1rem;
   min-width: 200px;
   margin-bottom: 0;
   margin-top: 0.3rem;
@@ -406,7 +402,7 @@ width: 100%;
 #buttonPrev, #pauseMusicButton, #buttonNext {
   background-color: #34302d;
   border: none;
-  max-width: 48px;
+  min-width: 48px;
   padding: 0.3rem;
 }
 #prevMusicImg, #nextMusicImg {
@@ -427,14 +423,11 @@ width: 100%;
 @media (max-width: 700px) {
   #musicPlayer {
     max-width: 59vw;
-    margin-right: 2%;
-    margin-left: 0;
     height: fit-content;
   }
 
   #musicPlayerTitle {
 	min-width: 40vw;
-  margin-right: 0.7rem;
   max-width: 7rem;
   }
 
