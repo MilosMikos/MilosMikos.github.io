@@ -18,7 +18,14 @@
   let isPlaying=false;
   let currTrack=document.createElement("audio");
   function loadTrack(trackIndex) {
-    currTrack.src = trackList[trackIndex].path;
+    let trackPath=trackList[trackIndex].path;
+    let trackSource="";
+    // if the script is called upon from comicreader.html it adds a '../' to the file path of the song (because the comic reader is in /comics)
+    if (window.location.pathname=="/comics/comicreader.html") {
+      const folderAbove="../";
+      trackSource=folderAbove.concat(trackPath);
+    } else {trackSource=trackPath;} // if not it assings the path from trackList directly as the song filepath
+    currTrack.src = trackSource;
     currTrack.load();
     trackName.innerHTML = trackList[trackIndex].name;
     currTrack.addEventListener("ended", nextTrack);
@@ -34,12 +41,14 @@
   function playMusic() {
     currTrack.play();
     isPlaying=true;
-    pausePlayButton.src="images/pause.svg"
+    if(window.location.pathname=="/comics/comicreader.html") {pausePlayButton.src="../images/pause.svg";}
+    else {pausePlayButton.src="images/pause.svg";}
   }
   function pauseMusic() {
     currTrack.pause();
     isPlaying = false;
-    pausePlayButton.src="images/play.svg"
+    if(window.location.pathname=="/comics/comicreader.html") {pausePlayButton.src="../images/play.svg";}
+    else {pausePlayButton.src="images/play.svg";}
   }
   
   function nextTrack() {
