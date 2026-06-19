@@ -72,21 +72,12 @@ let music_player = document.querySelector("#musicPlayer");
   // btn is our parameter, its min when its ordered to be minimized and max when maximized
   function changeSize(btn) {
     if (btn=="min") {
-      music_player.classList.add("minimizing");
-      music_player.addEventListener("animationend", function() {
-        music_player.style.display = "none";
-        maximise_window.style.display = "flex";
-        maximise_window.classList.add("maximizing");
-        music_player.classList.remove("minimizing");
-      }, { once: true });
+      music_player.style.display = "none";
+      maximise_window.style.display = "flex";
     }
     else if(btn=="max") {
-      maximise_window.classList.add("minimizing");
-      maximise_window.addEventListener("animationend", function() {
-        maximise_window.style.display = "none";
-        music_player.style.display = "block";
-        music_player.classList.add("maximizing");
-        maximise_window.classList.remove("minimizing");
-      }, { once: true });
+      music_player.style.display = "block";
+      maximise_window.style.display = "none";
     }
   }
+  
