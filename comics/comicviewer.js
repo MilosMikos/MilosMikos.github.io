@@ -1,6 +1,6 @@
 // Charge une langue, fallback EN si besoin
 async function loadTranslations(lang) {
-  const load = (l) => fetch(`/locales/${l}.json`).then(r => r.ok ? r.json() : null);
+  const load = (l) => fetch(`../locales/${l}.json`).then(r => r.ok ? r.json() : null);
   
   if (lang === "en") {
     return { translations: await load("en"), lang: "en" };
@@ -73,7 +73,7 @@ $(async function () {
       if (targetPage < 1 || targetPage > tome.pages) return;
       new Image().src = `${tome.folder}/${lang}/${tome.baseName}-${targetPage}.jpg`;
       if (lang !== "en") {
-        new Image().src = `${tome.folder}/en/${tome.baseName}-${targetPage}.jpg`;
+        new Image().src = `${tome.folder}/EN/${tome.baseName}-${targetPage}.jpg`;
       }
     });
   }
@@ -96,7 +96,7 @@ $(async function () {
       if (await testImage(fallbackEN)) return { src: fallbackEN, langUsed: "en", fallback: true, notFound: false };
     }
 
-    return { src: "/placeholder.png", langUsed: data.lang, fallback: false, notFound: true };
+    return { src: "../placeholder.png", langUsed: data.lang, fallback: false, notFound: true };
   }
 
   async function loadPage(data) {
