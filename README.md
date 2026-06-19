@@ -12,6 +12,7 @@ List of things todo :
 
 - [x] Rework the laguage selector  
 - [x] Work on the comicsviewer
+- [ ] Repair the functions that retain the language originally choosen between pages
 - [ ] Style the comics viewer
 - [ ] Make Logos and various visuals
 
