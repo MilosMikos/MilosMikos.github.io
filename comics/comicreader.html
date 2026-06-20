@@ -15,11 +15,12 @@
 
 </head>
 
-<body>
-    <div class="leftArea">
+<body id="body">
+    <div class="leftArea" id="leftAreaId">
       <div id="menuButton">
         <a href="/index.html"><img src="/images/Logo_TF2_flat.svg"/></a>
       </div>
+      
       
       <div id="language-container">
         <div class="dropdown" id="language-dropdown">
@@ -95,6 +96,9 @@
       <script src="../scripts/music-player.js"></script>
       <div id="helpToggle" class="help-toggle" title="Afficher l'aide">
         <span>?</span>
+      </div>
+      <div id="sideMenuDiv" onclick="leftMenuToggle()">
+        <img src="../images/menu.svg" alt="Show side menu" id="sideMenuImg">
       </div>
     </div>
 
