@@ -5,6 +5,10 @@ on:
     branches:
       - main         # déploie seulement depuis main
       - 11ty-dev    # build seulement (pour tester), pas de déploiement
+permissions:
+  contents: write      # ← CHANGED: was 'read', needs 'write' to push
+  pages: write
+  id-token: write
 
 jobs:
   build:
