@@ -282,3 +282,38 @@ $(async function () {
   if (initialData) loadPage(initialData);
   else updateHash({ lang: currentLang, tomeKey: "tf00", pageNum: 1 });
 });
+// sticky script for mobile
+const leftArea = document.getElementById("leftAreaId");
+let menuHidden = false;
+let animStyle = 'quick';
+
+function updateMenu() { // keeps the leftArea fixed to the left of the screen
+    const panX = visualViewport.offsetLeft;
+    const hideX = menuHidden ? -leftArea.offsetWidth : 0;
+
+    leftArea.style.transform =
+        `translate3d(${panX + hideX}px, 0, 0)`;
+
+    requestAnimationFrame(updateMenu);
+}
+
+updateMenu();
+
+function leftMenuToggle() { // hides leftArea and changes anim
+    menuHidden = !menuHidden;
+    toggleAnim(); // turns on smooth anims for hiding the left area
+    setTimeout(toggleAnim, 300); // turns off smooth anim after anim is completed (so leftArea doesn't lag behind)
+}
+
+function toggleAnim() {
+  if(animStyle=='quick') {
+    leftArea.style.transition="ease-in-out 0.3s";
+    animStyle="smooth";
+    return;
+  }
+  if(animStyle=="smooth") {
+    leftArea.style.transition="ease-in 0s";
+    animStyle="quick";
+    return;
+  }
+}

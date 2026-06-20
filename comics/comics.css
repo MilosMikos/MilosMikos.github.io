@@ -7,10 +7,12 @@ body {
 	display: grid;
 	grid-template-columns: 1fr 2fr 1fr; /* 3 col */
 	grid-template-rows: 100%;
+	overflow: hidden;
   }
   
   .leftArea {
 	display: flex;
+	position: relative;
 	flex-direction: column;
 	align-items: flex-end;
 	gap: 20px;
@@ -402,7 +404,7 @@ width: 100%;
 #buttonPrev, #pauseMusicButton, #buttonNext {
   background-color: #34302d;
   border: none;
-  min-width: 48px;
+  width: 48px;
   padding: 0.3rem;
 }
 #prevMusicImg, #nextMusicImg {
@@ -419,6 +421,9 @@ width: 100%;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.2rem;
+}
+#sideMenuDiv {
+	display: none;
 }
 @media (max-width: 700px) {
   #musicPlayer {
@@ -437,5 +442,43 @@ width: 100%;
 
   #musicPlayerButtons button {
     flex: 1 1 30%;
+  }
+
+  /* mobile comic reader */
+
+  .leftArea {
+	display: flex;
+	position: fixed;
+	left: 0;
+	height: auto;
+	z-index: 600;
+	background: #262323; 
+	height: 100%;
+	width: 55vw;
+	transform: translateX(0);
+  }
+  #sideMenuDiv {
+	display: flex;
+	position: absolute;
+	right: -13vw;
+	background-color: #262323;
+	border-top-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	align-items: center;
+	justify-content: center;
+	z-index: 999;
+  }
+  #sideMenuImg {
+	width: 13vw;
+	height: 13vw;
+  }
+  .leftArea {
+    will-change: transform;
+    transform: translateZ(0);
+	transition: ease-in 0s;
+	
+}
+  .leftArea.hidden {
+	transform: translateX(calc(-100% + 13vw));
   }
 }
