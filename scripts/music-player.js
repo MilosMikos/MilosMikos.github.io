@@ -3,16 +3,12 @@
   let trackIndex=0;
   let trackList = [
     {
-      name: "Upgrade Station Music",
+      name: "Upgrade Station",
       path: "music/song01.mp3"
     },
     {
-      name: "test music 2",
-      path: "music/song01.mp3"
-    },
-    {
-      name: "test music 3",
-      path: "music/song01.mp3"
+      name: "Archimedes",
+      path: "music/Archimedes.mp3"
     }
   ];
   let isPlaying=false;
