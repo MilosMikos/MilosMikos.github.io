@@ -476,9 +476,12 @@ width: 100%;
     will-change: transform;
     transform: translateZ(0);
 	transition: ease-in 0s;
-	
-}
+  }
   .leftArea.hidden {
 	transform: translateX(calc(-100% + 13vw));
   }
+  #clickableArea img {
+	width: 160vw;
+  }
+
 }
