@@ -282,12 +282,15 @@ $(async function () {
   if (initialData) loadPage(initialData);
   else updateHash({ lang: currentLang, tomeKey: "tf00", pageNum: 1 });
 });
+
+
 // sticky script for mobile
 const leftArea = document.getElementById("leftAreaId");
 let menuHidden = false;
 let animStyle = 'quick';
 
 function updateMenu() { // keeps the leftArea fixed to the left of the screen
+    if(window.outerWidth>700) {return}; // doesn't if window is wider than 700px
     const panX = visualViewport.offsetLeft;
     const hideX = menuHidden ? -leftArea.offsetWidth : 0;
 
@@ -317,3 +320,7 @@ function toggleAnim() {
     return;
   }
 }
+
+window.onorientationchange = function() {
+  window.location.reload(); //reloads site when going into landscape mode
+};
