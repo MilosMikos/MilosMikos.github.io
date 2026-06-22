@@ -511,6 +511,54 @@ width: 100%;
   .rightArea {
 	max-height: 90vh;
   }
+  #pageNumberDiv {
+	width: 75vw;
+	position: fixed;
+	bottom:72vh;
+	left: 8.4vw;
+	will-change: transform;
+    transform: translateZ(0);
+	transition: ease-in 0s;
+	justify-items: center;
+  	display: flex;
+	align-items: center;
+	border: 1px #4a4643 solid;
+	border-top-right-radius: 40px;
+	border-top-left-radius: 40px;
+	padding: 15px;
+	padding-bottom: 100px;
+	background-color: #262323;
+  }
+  #pageNumberChooser {
+	width: 10vw;
+	border: none;
+	background-color: #262323;
+	color: white;
+	text-align: center;
+	border: 2px solid #111;
+	margin-right: 1vw;
+	border-radius: 10px;
+  }
+  #pageNumberDiv img {
+	width: 26vw;
+  }
+  #prevPageButton, #nextPageButton, #pageNumberChooser, #totalPages, #pagesUI {
+	float: left;
+  }
+  #pagesUI {
+	display: flex;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }
 
 @media (max-height: 500px) {
@@ -528,4 +576,35 @@ width: 100%;
 	left: 55vw;
 	position: absolute;
   }
+  .leftArea {
+	gap: 12px;
+	padding: none;
+	padding-left: 20px;
+	padding-right: 20px;
+  }
+  #musicPlayer {
+	width: 28vw;
+	height: 32vh;
+  }
+  #pageNumberDiv {
+	position: absolute;
+  top: 66vh;
+  height: 26vh;
+  left: 5vw;
+  width: 22vw;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  }
+  #pageNumberChooser {
+	width: 4vw;
+  }
+  #prevPageButton, #nextPageButton {
+	width: 10vw;
+  }
+  #helpToggle {
+	position: relative;
+	top: 14vh
+  }
+
 }
