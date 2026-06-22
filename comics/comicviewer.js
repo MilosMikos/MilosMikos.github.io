@@ -157,6 +157,8 @@ $(async function () {
     }
 
     preloadImages({ ...data, lang: langUsed });
+
+    getPageAmount();
   }
 
   function changePage(delta) {
@@ -281,6 +283,46 @@ $(async function () {
 
   if (initialData) loadPage(initialData);
   else updateHash({ lang: currentLang, tomeKey: "tf00", pageNum: 1 });
+
+  // getting total and current page for pageNumberDiv
+  function getPageAmount() {
+  const data = parseHash();
+  if (!data) return;
+
+  const tome = findTome(data.tomeKey);
+
+  if (tome) {
+    document.getElementById("totalPages").textContent = `/ ${tome.pages}`;
+  }
+  const currPage = document.getElementById("pageNumberChooser");
+  currPage.max = tome.pages;
+  currPage.value = data.pageNum;
+
+  }
+
+  function setDesiredPage() {
+    const data = parseHash();
+    if (!data) return;
+
+    let desiredPage=document.getElementById("pageNumberChooser");
+    let desiredPageMax=desiredPage.max;
+    let desiredPageValue=desiredPage.value;
+    if(desiredPageValue>desiredPageMax) {alert("This page does not exist"); getPageAmount(); return;};
+    
+    let desiredChange=desiredPageValue-data.pageNum;
+    changePage(desiredChange);
+  }
+
+  document.querySelector("#pageNumberChooser")
+  .addEventListener("change", setDesiredPage);
+
+  document.querySelector("#prevPageButton")
+  .addEventListener("click", () => changePage(-1));
+  
+  document.querySelector("#nextPageButton")
+  .addEventListener("click", () => changePage(1));
+
+  getPageAmount();
 });
 
 
