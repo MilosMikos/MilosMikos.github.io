@@ -308,7 +308,7 @@ $(async function () {
     let desiredPageMax=desiredPage.max;
     let desiredPageValue=desiredPage.value;
     if(desiredPageValue>desiredPageMax) {alert("This page does not exist"); getPageAmount(); return;};
-    
+
     let desiredChange=desiredPageValue-data.pageNum;
     changePage(desiredChange);
   }
@@ -366,3 +366,16 @@ function toggleAnim() {
 window.onorientationchange = function() {
   window.location.reload(); //reloads site when going into landscape mode
 };
+
+const pageNumberDiv = document.getElementById("pageNumberDiv");
+function updatePageDiv() { // keeps the pageNumberChooser fixed to the left of the screen
+    if(window.outerWidth>700) {return}; // doesn't if window is wider than 700px
+    const panX = visualViewport.offsetLeft;
+
+    pageNumberDiv.style.transform =
+        `translate3d(${panX}px, 0, 0)`;
+
+    requestAnimationFrame(updatePageDiv);
+}
+
+updatePageDiv();
