@@ -425,7 +425,33 @@ width: 100%;
 #sideMenuDiv {
 	display: none;
 }
-@media (max-width: 700px) {
+@media (min-width: 700px) { /*Desktop styling*/
+#pageNumberDiv {
+  position: absolute;
+  top: 34vh;
+  display: flex;
+  max-width: 256px;
+  width: 100%;
+  left: 1vw;
+  align-items: center;
+}
+#nextPageButton, #prevPageButton, #pageNumberChooser {
+  float: left;
+  width: 80px;
+}
+#pageNumberChooser {
+  width: 20px;
+}
+#pagesUI {
+  height: max-content;
+  float: left;
+  width: 60px;
+}
+}
+
+
+
+@media (max-width: 700px) { /* vertical phone styling */
   #musicPlayer {
     max-width: 59vw;
     height: fit-content;
@@ -561,7 +587,7 @@ input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
 
-@media (max-height: 500px) {
+@media (max-height: 500px) { /* horizontal phone styling */
   #fullscreenToggle img{
 	width: 100%;
 	height: 100%;
