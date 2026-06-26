@@ -169,12 +169,12 @@ $(async function () {
 
     if (newPage > currentTome.pages) {
       const nextTome = getNextTome(data.tomeKey);
-      if (nextTome) data = { lang: data.lang, tomeKey: nextTome.key, pageNum: 1 };
+      if (nextTome) {data = { lang: data.lang, tomeKey: nextTome.key, pageNum: 1 }; changeBackground();}
       else return;
     } else if (newPage < 1) {
       const index = tomeData.findIndex((t) => t.key === data.tomeKey);
       const prevTome = tomeData[index - 1];
-      if (prevTome) data = { lang: data.lang, tomeKey: prevTome.key, pageNum: prevTome.pages };
+      if (prevTome) {data = { lang: data.lang, tomeKey: prevTome.key, pageNum: prevTome.pages }; changeBackground();}
       else return;
     } else {
       data.pageNum = newPage;
@@ -232,6 +232,16 @@ $(async function () {
     selectedItem.attr("lang-selection", lang);
     selectedItem.html(`<img src="${imgSrc}" /> ${text} <span class="arrow-down"></span>`);
     $("#langSelect").val(lang);
+  }
+
+  function changeBackground() {
+    const backgroundImages = ["/images/backgrounds/firstframe_cigs.png", "/images/backgrounds/firstframe_fan.png", "/images/backgrounds/firstframe_radar.png", "/images/backgrounds/firstframe_record.png"];
+    const body = document.querySelector("#body");
+    const randomImage = backgroundImages[Math.floor(Math.random() * backgroundImages.length)];
+    body.style.background = `url("${randomImage}")`;
+    body.style.backgroundSize = "cover";
+    body.style.backgroundPosition = "center";
+    body.style.backgroundRepeat = "no-repeat";
   }
 
   // --- Fullscreen ---
