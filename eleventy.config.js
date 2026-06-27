@@ -6,7 +6,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ images: "images" });
   eleventyConfig.addPassthroughCopy({ fonts: "fonts" });
   eleventyConfig.addPassthroughCopy({ comics: "comics" });
-  eleventyConfig.addPassthroughCopy({ music: "music" });
+  eleventyConfig.addPassthroughCopy({ sounds: "sounds" });
   
 
   return {
