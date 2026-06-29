@@ -12,6 +12,7 @@
     }
   ];
   let isPlaying=false;
+  console.log(isPlaying)
   let currTrack=document.createElement("audio");
   function loadTrack(trackIndex) {
     let trackPath=trackList[trackIndex].path;
@@ -30,23 +31,29 @@
   
   loadTrack(trackIndex); // this loads the music track upon first opening the site
 
+
   function playPauseMusic() {
     if(!isPlaying) playMusic();
     else pauseMusic();
   }
+
   function playMusic() {
     currTrack.play();
     isPlaying=true;
     if(window.location.pathname=="/comics/comicreader.html") {pausePlayButton.src="../images/pause.svg";}
     else {pausePlayButton.src="images/pause.svg";}
+
   }
   function pauseMusic() {
     currTrack.pause();
     isPlaying = false;
     if(window.location.pathname=="/comics/comicreader.html") {pausePlayButton.src="../images/play.svg";}
     else {pausePlayButton.src="images/play.svg";}
+    console.log(isPlaying)
   }
   
+  pauseMusic() //makes the default to paused
+
   function nextTrack() {
   // Go back to the first track if the
   // current one is the last in the track list
