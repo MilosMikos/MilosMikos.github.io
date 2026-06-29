@@ -4,14 +4,19 @@
   let trackList = [
     {
       name: "Upgrade Station",
-      path: "sounds/song01.mp3"
+      path: "sounds/upgradeStation.mp3"
     },
     {
       name: "Archimedes",
       path: "sounds/Archimedes.mp3"
     }
+    /* {
+      name: "Test",
+      path: "sounds/cha-ching-money.mp3"
+    } */
   ];
   let isPlaying=false;
+  let isLooping=true;
   console.log(isPlaying)
   let currTrack=document.createElement("audio");
   function loadTrack(trackIndex) {
@@ -25,8 +30,14 @@
     currTrack.src = trackSource;
     currTrack.load();
     trackName.innerHTML = trackList[trackIndex].name;
-    currTrack.addEventListener("ended", nextTrack);
+    if (isLooping) {
+    currTrack.loop = true;
     playMusic();
+    }
+    else {
+      currTrack.addEventListener("ended", nextTrack);
+      playMusic();
+    }
   }
   
   loadTrack(trackIndex); // this loads the music track upon first opening the site
@@ -39,6 +50,9 @@
 
   function playMusic() {
     currTrack.play();
+    if (isLooping) {
+      currTrack.loop = true;
+    }
     isPlaying=true;
     if(window.location.pathname=="/comics/comicreader.html") {pausePlayButton.src="../images/pause.svg";}
     else {pausePlayButton.src="images/pause.svg";}
