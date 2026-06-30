@@ -16,6 +16,8 @@
 </head>
 
 <body id="body">
+  <video id="bg1" class="bg-layer" autoplay muted loop playsinline disablepictureinpicture></video>
+  <video id="bg2" class="bg-layer" autoplay muted loop playsinline disablepictureinpicture></video>
     <div class="leftArea" id="leftAreaId">
       <div id="menuButton">
         <a href="/index.html"><img src="/images/Logo_TF2_flat.svg"/></a>
@@ -84,7 +86,7 @@
                     <img src="../images/prev.svg" alt="Select previous track" onclick="prevTrack()" id="prevMusicImg">
                 </button>
                 <button id="pauseMusicButton" onclick="playPauseMusic()">
-                    <img src="../images/pause.svg" alt="Pause the music" id="pauseMusicImg">
+                    <img src="../images/play.svg" alt="Pause/Play the music" id="pauseMusicImg">
                 </button>
                 <button id="buttonNext">
                     <img src="../images/next.svg" alt="Select next track" onclick="nextTrack()" id="nextMusicImg">
@@ -122,7 +124,7 @@
       </a>
   </div>
 
-  <div id="pageNumberDiv">
+  <div id="pageNumberDiv" style="display: none">
     <img src="/images/prev.svg" alt="Previous Page" id="prevPageButton">
     <div id="pagesUI">
       <input type="number" name="" id="pageNumberChooser">
