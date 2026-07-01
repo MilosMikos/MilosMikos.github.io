@@ -354,6 +354,21 @@ body {
   .dropdown.open .dropdown-content {
 	display: block;
   }
+
+  #backgroundChooser {
+	background-color: #34302D;
+	padding: 20px;
+	border-radius: 20px;
+  }
+
+  #backgroundChooser select {
+	background: #4a4643;
+	border: none;
+	color: white;
+	padding: 8px;
+	border-radius: 10px;
+	font-family: Host Grotesk;
+  }
   
   @keyframes slideIn {
 	from {
@@ -411,7 +426,7 @@ body {
 	position: absolute;
 	left: 25px;
 	margin: 0 auto;
-	height: 86px;
+	height: 96px;
 	width: 10px;
 	background: #555;
 	border-radius: 15px;
