@@ -1,5 +1,6 @@
   let pausePlayButton = document.querySelector("#pauseMusicImg");
   let trackName = document.querySelector("#musicPlayerTitle");
+  let loopButton = document.querySelector("#loopButton");
   let trackIndex=0;
   let trackList = [
     {
@@ -41,6 +42,23 @@
   }
   
   loadTrack(trackIndex); // this loads the music track upon first opening the site
+
+ // function and eventlisteners for loop button
+  function toggleLooping() { 
+    if(isLooping==true) {
+      currTrack.addEventListener("ended", nextTrack);
+      currTrack.loop=false;
+      isLooping=false;
+      loopButton.src="/images/loop_off.svg";
+    } else {
+      currTrack.removeEventListener("ended", nextTrack);
+      currTrack.loop=true;
+      isLooping=true;
+      loopButton.src="/images/loop_on.svg";
+    }
+  }
+
+  loopButton.addEventListener("click", toggleLooping);
 
 
   function playPauseMusic() {

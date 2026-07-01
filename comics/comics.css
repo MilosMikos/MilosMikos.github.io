@@ -380,7 +380,7 @@ body {
   width: 100%;
   max-width: 320px;
   box-sizing: border-box;
-  height: 120px;
+  height: 130px;
   background-color: #34302d;
   width: max-content;
   margin: none auto;
@@ -398,13 +398,12 @@ body {
   gap: 0.75rem;
 }
 #musicPlayerTitle {
-width: 100%;
+  flex: 1;
+	margin: 0;
   text-align: center;
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   color: #eef2e5;
   min-width: 200px;
-  margin-bottom: 0;
-  margin-top: 0.3rem;
   text-wrap: wrap;
 }
 
@@ -421,11 +420,14 @@ width: 100%;
   display: flex;
   
 }
-#buttonPrev, #pauseMusicButton, #buttonNext {
+#musicPlayer div button {
   background-color: #34302d;
   border: none;
   width: 48px;
-  padding: 0.3rem;
+  padding-top: 0;
+}
+#buttonNext, #buttonPrev  {
+  width: 60px !important;
 }
 #prevMusicImg, #nextMusicImg {
   width: 100%;
@@ -445,6 +447,19 @@ width: 100%;
 #sideMenuDiv {
 	display: none;
 }
+#loopButton {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+#musicPlayerHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 @media (min-width: 700px) { /*Desktop styling*/
 #pageNumberDiv {
   position: absolute;
@@ -481,7 +496,7 @@ width: 100%;
   }
 
   #musicPlayerTitle {
-	min-width: 40vw;
+	min-width: 35vw;
   max-width: 7rem;
   }
 
@@ -502,7 +517,6 @@ width: 100%;
 	height: 100vh;
 	z-index: 600;
 	background: #262323; 
-	width: 55vw;
 	transform: translateX(0);
 	padding-top: 5vh;
 	border-right: 3px solid #34302D;
@@ -597,6 +611,10 @@ width: 100%;
   #pagesUI {
 	display: flex;
   }
+  .bg-layer {
+	height: 100vh; /*so the background doesnt overflow vertically*/
+  }
+
 }
 
 input::-webkit-outer-spin-button,
@@ -616,24 +634,40 @@ input[type=number] {
 	height: 100%;
 	display: block;
   }
+  .fullscreen-active #fullscreenToggle { 
+	right: 0px;
+  }
   #fullscreenToggle {
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 60px;
 	height: 50px;
-	left: 55vw;
 	position: absolute;
+	right: -50px;
   }
   .leftArea {
 	gap: 12px;
 	padding: none;
 	padding-left: 20px;
 	padding-right: 20px;
+  overflow-x: hidden;
+  width: 29vw;
   }
   #musicPlayer {
-	width: 28vw;
-	height: 32vh;
+	height: fit-content;
+  max-width: 29vw;
+  }
+  #loopButton {
+    padding-left: 0.3vw;
+  }
+  #musicPlayerTitle {
+    min-width: 16.9vw;
+  }
+  #musicPlayer div button {
+    width: 5vw;
+  }
+  #buttonPrev, #buttonNext {
+    width: 6vw !important;
   }
   #pageNumberDiv {
 	position: absolute;
@@ -659,6 +693,12 @@ input[type=number] {
   #helpToggle {
 	position: relative;
 	top: 14vh
+  }
+  #volume {
+    left: 2.5vw;
+  }
+  .rightArea {
+    padding: 7px;
   }
 
 }
